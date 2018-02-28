@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>ICSD Entry - JSmol</title>
+  <meta charset="utf-8" />
+  <script type="text/javascript" src="JSmol.min.js"></script>
+  <script>
+    var jmolApplet0;
+
+    var Info = {
+      width: 600,
+      height: 600,
+      debug: false,
+      color: "white",
+      addSelectionOptions: false,
+      use: "HTML5",
+      j2sPath: "j2s",
+      disableInitialConsole: true,
+      debug: false,
+    }
+
+    window.onload = function()
+    {
+      Jmol.script(jmolApplet0, "set zoomlarge false;set antialiasDisplay;load inline \"" + document.getElementById("cif").value + "\" {2 2 2};");
+    }
+  </script>
+
+</head>
+<body>
+
+  <div id="view" class="hidden">
+  <script>
+    jmolApplet0 = Jmol.getApplet("jmolApplet0", Info);
+  </script>
+  </div>
+
+  <textarea id="cif" rows="0" cols="0" style="display: none;">
+  <#tmpl_cif/>
+  </textarea>
+</body>
+</html>

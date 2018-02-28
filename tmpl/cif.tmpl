@@ -1,0 +1,86 @@
+data_<#coll_code/>-ICSD
+_database_code_ICSD                <#coll_code/>
+_audit_creation_date               <#rec_date/>
+_chemical_name_systematic          '<#chem_name/>'
+_chemical_formula_structural       '<#struct_form/>'
+_chemical_formula_sum              '<#sum_form/>'
+_publ_section_title
+;
+<#au_title/>
+;
+loop_
+_citation_id
+_citation_journal_abbrev
+_citation_year
+_citation_journal_volume
+_citation_journal_issue
+_citation_page_first
+_citation_page_last
+_citation_journal_id_ASTM
+<#loop:references/>
+<#ref_seq/> '<#j_title/>' <#year/> <#volume/> <#issue/> <#page_first/> <#page_last/> <#coden/>
+<#loop/>
+_publ_author_name
+;
+<#authors_text/>
+;
+_cell_length_a                     <#a_text/>
+_cell_length_b                     <#b_text/>
+_cell_length_c                     <#c_text/>
+_cell_angle_alpha                  <#alpha_text/>
+_cell_angle_beta                   <#beta_text/>
+_cell_angle_gamma                  <#gamma_text/>
+_cell_volume                       <#c_vol/>
+_cell_formula_units_Z              <#z/>
+_symmetry_space_group_name_H-M     '<#sgr_disp/>'
+_symmetry_Int_Tables_number        <#sgr_num/>
+_refine_ls_R_factor_all            <#r_val/>
+loop_
+_symmetry_equiv_pos_site_id
+_symmetry_equiv_pos_as_xyz
+<#smat_genrpos/>
+loop_
+_atom_type_symbol
+_atom_type_oxidation_number
+<#loop:atom_type_symbols/>
+<#symbol/> <#ox/>
+<#loop/>
+loop_
+_atom_site_label
+_atom_site_type_symbol
+_atom_site_symmetry_multiplicity
+_atom_site_Wyckoff_symbol
+_atom_site_fract_x
+_atom_site_fract_y
+_atom_site_fract_z
+_atom_site_occupancy
+_atom_site_attached_hydrogens
+_atom_site_U_iso_or_equiv
+<#loop:atom_list/>
+<#el_symbol/><#el_label/> <#cif_symbol/> <#w_mult/> <#w_lett/> <#x_text/> <#y_text/> <#z_text/> <#sof_text/> <#els_h/> <#itf_text/><#skip:x_val/>
+<#loop/>
+loop_<#skip:atf_header!=C/>
+_atom_site_aniso_label<#skip:atf_header!=C/>
+_atom_site_aniso_type_symbol<#skip:atf_header!=C/>
+_atom_site_aniso_B_11<#skip:atf_header!=C/>
+_atom_site_aniso_B_22<#skip:atf_header!=C/>
+_atom_site_aniso_B_33<#skip:atf_header!=C/>
+_atom_site_aniso_B_12<#skip:atf_header!=C/>
+_atom_site_aniso_B_13<#skip:atf_header!=C/>
+_atom_site_aniso_B_23<#skip:atf_header!=C/>
+<#loop:atom_list/><#skip:atf_header!=C/>
+<#el_symbol/><#el_label/> <#cif_symbol/> <#tf11_text/> <#tf22_text/> <#tf33_text/> <#tf12_text/> <#tf13_text/> <#tf23_text/><#skip:atf_code/>
+<#loop/>
+loop_<#skip:atf_header!=D/>
+_atom_site_aniso_label<#skip:atf_header!=D/>
+_atom_site_aniso_type_symbol<#skip:atf_header!=D/>
+_atom_site_aniso_U_11<#skip:atf_header!=D/>
+_atom_site_aniso_U_22<#skip:atf_header!=D/>
+_atom_site_aniso_U_33<#skip:atf_header!=D/>
+_atom_site_aniso_U_12<#skip:atf_header!=D/>
+_atom_site_aniso_U_13<#skip:atf_header!=D/>
+_atom_site_aniso_U_23<#skip:atf_header!=D/>
+<#loop:atom_list/><#skip:atf_header!=D/>
+<#el_symbol/><#el_label/> <#cif_symbol/> <#tf11_text/> <#tf22_text/> <#tf33_text/> <#tf12_text/> <#tf13_text/> <#tf23_text/><#skip:atf_code/>
+<#loop/>
+#End of data_<#coll_code/>-ICSD

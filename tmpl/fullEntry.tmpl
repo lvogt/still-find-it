@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>ICSD Entry</title>
+  <meta charset="utf-8" />
+  <style>
+  .hidden {
+    display: none;
+  }
+  .b {
+    font-weight: bold;
+    color: #0f00ff;
+  }
+  .float-like {
+    display: inline-block;
+    vertical-align: top;
+  }
+  .atom-list {
+    font-size: 90%
+  }
+  .rem {
+    font-family: Courier New;
+  }
+  .button {
+    text-decoration: none;
+    background-color: #EEEEEE;
+    color: #333333;
+    padding: 2px 8px 2px 8px;
+    border-top: 1px solid #CCCCCC;
+    border-right: 1px solid #333333;
+    border-bottom: 1px solid #333333;
+    border-left: 1px solid #CCCCCC;
+  }
+  body {
+    background: #105469;
+    font-family: 'Open Sans', sans-serif;
+    color: black;
+  }
+  h1 {
+    background: white;
+    border-radius: 0.25em;
+    margin: 0.2em;
+    padding: 0.2em 0.1em;
+    text-align: center;
+    max-width: 800px;
+    font-size: 150%;
+  }
+  fieldset {
+    border: none;
+  }
+  table {
+    background: white;
+    //background: #44646E;
+    border-radius: 0.25em;
+    border-collapse: collapse;
+    margin: 0.2em;
+    overflow: scroll;
+    width: 400px;
+  }
+  th {
+    border-bottom: 2px solid #364043;
+    font-size: 0.85em;
+    font-weight: bold;
+    padding: 0.5em 1em;
+    text-align: left;
+    color: #0f00ff;
+  }
+  td {
+    padding: 0.4em 1em;
+  }
+  a, a:visited {
+    color: black;
+    cursor: pointer;
+  }
+
+  </style>
+
+  <script>
+    function chemBeautify()
+    {
+      var eq = document.getElementsByClassName("ce");
+      for (var i = 0; i < eq.length; i++)
+      {
+        var tmp = eq[i].innerHTML.replace(/([0-9.]+)/g, "<sub>$1</sub>");
+        eq[i].innerHTML = tmp.replace(/\s*/g, "");
+      }
+    }
+
+    function latticeBeautify()
+    {
+      var lat = document.getElementsByClassName("lattice");
+      for (var i = 0; i < lat.length; i++)
+      {
+        var tmp = lat[i].innerHTML.split(" ");
+        var str = "a&nbsp;=&nbsp;" + tmp[0] + "; b&nbsp;=&nbsp;" + tmp[1] + "; c&nbsp;=&nbsp;" + tmp[2] + " &#8491;<br />";
+        str += "&alpha;&nbsp;=&nbsp;" + tmp[3] + "; &beta;&nbsp;=&nbsp;" + tmp[4] + "; &gamma;&nbsp;=&nbsp;" + tmp[5] + "&deg;"
+        lat[i].innerHTML = str;
+      }
+    }
+
+    function localDate()
+    {
+      var dates = document.getElementsByClassName("date");
+      for (var i = 0; i < dates.length; i++)
+      {
+        var dateParts = dates[i].innerHTML.split("/");
+        var date = new Date(dateParts[0], (dateParts[1] - 1), dateParts[2]);
+        dates[i].innerHTML = date.toLocaleDateString(navigator.language, {year: 'numeric', month: 'long', day: '2-digit'});
+      }
+    }
+
+    function authorBeautify()
+    {
+      var author = document.getElementsByClassName("author");
+      for (var i = 0; i < author.length; i++)
+      {
+        author[i].innerHTML = author[i].innerHTML.split(";").join("; ");
+      }
+    }
+
+    window.onload = function()
+    {
+      chemBeautify();
+      localDate();
+      latticeBeautify();
+      authorBeautify();
+    }
+  </script>
+
+</head>
+<body>
+<h1><#chem_name/></h1>
+<div style="padding: 10px 20px;">
+  <a class="button" href="?id=<#idnum/>&amp;type=cif">Save CIF file</a>&nbsp;&nbsp;&nbsp;
+  <a class="button" href="?id=<#idnum/>&amp;type=jsmol" target="jsmol">Display in JSmol</a>
+</div>
+
+<div>
+  <div class="float-like">
+    <table>
+      <tbody>
+        <tr>
+          <td><span class="b">Recorded</span><br /><span class="date"><#rec_date/></span></td>
+          <td>
+            <span class="b">Modified</span><br /><span class="date"><#mod_date/></span><#skip:mod_date/>
+          </td>
+        </tr>
+        <tr><td colspan="2"><span class="b">Collection Code</span><br /><#coll_code/></td></tr>
+        <tr>
+          <td colspan="2"><span class="b">Sum formula</span><br /><span class="ce"><#sum_form/></span></td>
+        </tr>
+        <tr><td colspan="2"><span class="b">Structured formula</span><br /><span class="ce"><#struct_form/></span></td></tr>
+        <tr>
+          <td>
+            <span class="b">Structure type</span><br /><#struct_type/><#skip:struct_type/>
+          </td>
+          <td
+           title="<#add_name/> (<#min_origin/>)"
+           >
+            <span class="b">Mineral</span><br /><#min_name/><#skip:min_name/>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="b">ANX</span><br /><#anx_form/><#skip:anx_form/>
+          </td>
+          <td>
+            <span class="b">Pearson</span><br /><#pearson/><#skip:pearson/>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="b">Wyckoff</span><br /><#wyck/><#skip:wyck/>
+          </td>
+          <td>
+            <span class="b">AB</span><br /><#ab_form/><#skip:ab_form/>
+          </td>
+        </tr>
+
+        <tr><td colspan="2"><span class="b">Unit cell</span><br /><span class="lattice"><#unit_cell_text/></span></td></tr>
+        <tr>
+          <td><span class="b">Volume</span><br /><#c_vol/> &#8491;<sup>3</sup></td>
+          <td><span class="b">Z</span><br /><#z/></td>
+        </tr>
+        <tr>
+          <td><span class="b">Space group</span><br /><#sgr_disp/> (No. <#sgr_num/>)
+            NS<#skip:sgr_nonstd/>
+          </td>
+          <td><span class="b">System</span><br /><#cryst_sys/></td>
+        </tr>
+        <tr>
+          <td><span class="b">M<sub>r</sub></span><br /><#mol_mass/> g / mol</td>
+          <td>
+            <span class="b">R-Value</span><br /><#r_val/><#skip:r_val/>
+          </td>
+        </tr>
+        <tr>
+          <td><span class="b">Density (calc)</span><br /><#dens_calc/> g / cm<sup>3</sup></td>
+          <td>
+            <span class="b">Density (exp)</span><br /><#dens/> g / cm<sup>3</sup><#skip:dens/>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="b">Temperature</span><br /><#temperature/> K<#skip:temperature/>
+            <i>(default)</i><#skip:temperature_is_default/>
+          </td>
+          <td>
+            <span class="b">Pressure</span><br /><#pressure/> bar<#skip:pressure/>
+            <i>(default)</i><#skip:pressure_is_default/>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="float-like">
+    <table>
+      <tbody>
+        <tr>
+          <td><span class="b">Publication</span><br /><#au_title/></td>
+        </tr>
+        <tr>
+          <td><span class="b">Author(s)</span><br /><span class="author"><#authors_text/></span></td>
+        </tr>
+        <tr>
+          <td>
+            <span class="b">Reference(s)</span><br />
+            <#loop:references/>
+            <a href="http://dx.doi.org/<#doi/>" target="_blank"><#skip:doi/>
+              <#ref_seq/>) <#j_title/> (<#year/>), <#volume/>(<#issue/>), <#page_first/>.
+            </a><#skip:doi/>
+            <br />
+            <#loop/>
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            <span class="b">Remarks</span><br /><#skip:remarks/>
+            <#loop:remarks/>
+            <span class="rem"><#std_rem_code/>:</span> <#std_remark/> <#add_rem/><br />
+            <#loop/>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="b">Test codes</span><br /><#skip:tests/>
+            <#loop:tests/>
+            <span class="rem"><#test_flag_code/>:</span> <#desc_new/><br />
+            <#loop/>
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            <span class="b">Comments</span><br /><#skip:comments/>
+            <#loop:comments/>
+            <#comments/><br />
+            <#loop/>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div>
+  <div class="float-like atom-list">
+    <table>
+      <thead>
+        <tr><th>Atom</th><th>Ox</th><th>Site</th><th>x</th><th>y</th><th>z</th><th>SOF</th>
+          <th>H</th><#skip:elsH_header/>
+          <th>ITF(<#itf_header/>)</th><#skip:itf_header/>
+        </tr>
+      </thead>
+      <tbody>
+        <#loop:atom_list/>
+        <tr><td><#el_symbol/><#el_label/></td><td><#ox_text/></td><td><#w_mult/><#w_lett/></td><td><#x_text/></td><td><#y_text/></td><td><#z_text/></td><td><#sof_text/></td><#skip:x_val/>
+        <tr><td><#el_symbol/><#el_label/></td><td><#ox_text/></td><td colspan="5">Position of <#h_d/> atoms is undetermined.</td><#skip:h_d/>
+          <td><#els_h/></td><#skip::elsH_header/>
+          <td><#itf_text/></td><#skip::itf_header/>
+        </tr>
+        <#loop/>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="float-like atom-list">
+    <table>
+      <thead>
+        <tr><th>Atom</th><th>Beta(1,1)</th><th>Beta(2,2)</th><th>Beta(3,3)</th><th>Beta(1,2)</th><th>Beta(1,3)</th><th>Beta(2,3)</th></tr><#skip:atf_header!=B/>
+        <tr><th>Atom</th><th>B(1,1)</th><th>B(2,2)</th><th>B(3,3)</th><th>B(1,2)</th><th>B(1,3)</th><th>B(2,3)</th></tr><#skip:atf_header!=C/>
+        <tr><th>Atom</th><th>U(1,1)</th><th>U(2,2)</th><th>U(3,3)</th><th>U(1,2)</th><th>U(1,3)</th><th>U(2,3)</th></tr><#skip:atf_header!=D/>
+      </thead>
+      <tbody>
+        <#loop:atom_list/>
+        <tr><td><#el_symbol/><#el_label/></td><td><#tf11_text/></td><td><#tf22_text/></td><td><#tf33_text/></td><td><#tf12_text/></td><td><#tf13_text/></td><td><#tf23_text/></td></tr><#skip:atf_code/>
+        <#loop/>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+</body>
+</html>
