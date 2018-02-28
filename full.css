@@ -1,0 +1,43 @@
+table {
+  margin: 0.2em;
+  width: 400px;
+}
+
+td {
+  padding: 0.4em 1em;
+  white-space: normal;
+}
+
+tbody tr {
+  transition: none;
+}
+
+tbody tr:hover {
+  background: inherit;
+}
+
+.b {
+  font-weight: bold;
+  color: green;
+}
+
+.atom-list {
+  font-size: 90%
+}
+
+.rem {
+  font-family: Courier New;
+}
+
+.hidden {
+  display: none;
+}
+
+.title {
+  background: white;
+  border-radius: 0.25em;
+  margin: 0.2em 0.8em;
+  padding: 0.2em 0.1em;
+  max-width: 800px;
+  font-size: 150%;
+}
