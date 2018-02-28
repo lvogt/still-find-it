@@ -1,0 +1,35 @@
+@media (max-width: 799px) {
+  table {
+    width: 100%;
+  }
+  th {
+    display: none;
+  }
+  td {
+    display: inline-block;
+    position: relative;
+    margin-top: 10px;
+    white-space: normal;
+  }
+  td:before {
+    content: attr(data-label);
+    font-size: 80%;
+    color: green;
+    white-space: nowrap;
+    position: absolute;
+    top: -5px;
+  }
+  tbody tr {
+    transition: none;
+  }
+  td.small-txt {
+    font-size: unset;
+    max-width: unset;
+    overflow: unset;
+    text-overflow: unset;
+  }
+  .resCount:before {
+    content: "";
+    display: block;
+  }
+}
