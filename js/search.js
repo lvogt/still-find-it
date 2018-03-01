@@ -304,7 +304,7 @@ function updateTable(maxRows, start, sortBy)
     start = 0;
   }
 
-  var html = "<thead><tr>";
+  var html = "<thead><tr><th></th>";
 
   columns.forEach(function(item) {
     if (item == "idnum")
@@ -328,6 +328,8 @@ function updateTable(maxRows, start, sortBy)
     columns.forEach(function(item) {
       if (item == "idnum")
         return;
+
+     html += "<td data-label=\"\"><input type=\"checkbox\" id=\"ckb-" + i + "\" />";
 
       if (item == "coll_code")
         html += "<td data-label=\"" + allColumns[item] + "\"><a href=\"entry.php?id=" + results[i]["idnum"]
