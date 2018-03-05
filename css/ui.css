@@ -99,8 +99,23 @@ fieldset {
   vertical-align: top;
 }
 
+ul {
+  padding-left: 15px;
+}
+
 .hidden {
   display: none !important;
+}
+
+.ckbCol {
+  padding: 0px 0px 0px 4px;
+}
+
+.dragList {
+  border: 1px dashed gray;
+  margin: 2px 0px;
+  padding: 1px 3px 1px 0px;
+  list-style-type: "\21C5";
 }
 
 .sort-down {

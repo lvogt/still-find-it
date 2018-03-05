@@ -6,6 +6,7 @@ var colString = "";
 var hashArray = {};
 var searchData;
 var invalidateCache = false;
+var dragSource;
 var columns = [
   "idnum",
   "coll_code",
@@ -70,16 +71,7 @@ function init()
     colCount++;
   });
 
-  //settings: fill list with possible columns
-  var html = "";
-  for (var key in allColumns)
-  {
-    if (key == "idnum")
-      continue;
-    html += '<input type="checkbox" id="' + key + '_s" name="' + key + '_s" />'
-         +  '<label for="' + key + '_s">' + allColumns[key] + '</label><br />';
-  }
-  document.getElementById("formCols").innerHTML = html;
+  fillColumnList();
 
   //bind onclick events
   document.getElementById("btnSubmit").onclick= formToHash;
@@ -91,6 +83,60 @@ function init()
   document.getElementById("searchForm").onkeyup = (event) => { if (event.key == "Enter") formToHash(); }
 
   hashToSearch();
+}
+
+function fillColumnList()
+{
+  //settings: fill list with possible columns
+  document.getElementById("formCols").innerHTML = "";
+
+  var html = "<ul id=\"columnList\">";
+
+  columns.forEach((item) => {
+    if (item == "idnum")
+      return;
+
+    html += '<li class="dragList" draggable="true" ondragenter="listDragEnter(event)" ondragstart="listDragStart(event)"><input type="checkbox" id="' + item + '_s" name="' + item + '_s" />'
+         +  '<label for="' + item + '_s">' + allColumns[item] + '</label></li>';
+  });
+
+  for (var key in allColumns)
+  {
+    if ((key == "idnum") || (columns.indexOf(key) != -1))
+      continue;
+    html += '<li class="dragList" draggable="true" ondragenter="listDragEnter(event)" ondragstart="listDragStart(event)"><input type="checkbox" id="' + key + '_s" name="' + key + '_s" />'
+         +  '<label for="' + key + '_s">' + allColumns[key] + '</label></li>';
+  }
+  html += "</ul>";
+  document.getElementById("formCols").innerHTML = html;
+}
+
+function isbefore(a, b)
+{
+  if (a.parentNode != b.parentNode)
+    return false;
+
+  for (var cur = a; cur; cur = cur.previousSibling)
+    if (cur === b)
+      return true;
+
+  return false;
+}
+
+function listDragEnter(event)
+{
+  if (isbefore(dragSource, event.target))
+    event.target.parentNode.insertBefore(dragSource, event.target);
+  else
+    event.target.parentNode.insertBefore(dragSource, event.target.nextSibling);
+}
+
+function listDragStart(event)
+{
+  console.log("dragStart");
+  event.dataTransfer.setData("text/plain", null);
+  dragSource = event.target;
+  event.dataTransfer.effectAllowed = 'move';
 }
 
 function displaySettings()
@@ -144,9 +190,11 @@ function closeSettings(event)
     if (colsChanged)
     {
       columns = newCols;
-      location.hash = "";
+      //location.hash = "";
       invalidateCache = true;
       setCookie("columns", JSON.stringify(columns), 360);
+      fillColumnList();
+      hashToSearch();
     }
   }
 }
@@ -325,7 +373,7 @@ function updateTable(maxRows, start, sortBy)
     else
       html += "<tr class=\"even\">";
 
-    html += "<td data-label=\"\"><input type=\"checkbox\" id=\"ckb-" + i + "\" />";
+    html += "<td data-label=\"\" class=\"ckbCol\"><input type=\"checkbox\" id=\"ckb-" + i + "\" />";
 
     columns.forEach(function(item) {
       if (item == "idnum")
