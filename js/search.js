@@ -434,7 +434,7 @@ function updateTable(maxRows, start, sortBy)
          + "<span class=\"resCount\">Results: (" + (start+1) + " - " + (start+maxRows > results.length ? results.length : (start+maxRows)) + ") of " + results.length + "</span>";
   }
   else
-    html = "|&lt;&lt;&nbsp;&nbsp;&lt;&nbsp;&nbsp;&gt;&nbsp;&nbsp;&gt;&gt;|&nbsp;&nbsp;Results: " + results.length;
+    html = "Results: " + results.length;
 
   html += " <span class=\"info\">exec. time: " + (resInfo.fetchTime*1000).toFixed(3) + " ms";
   if (resInfo.cached)
