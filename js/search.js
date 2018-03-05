@@ -237,7 +237,7 @@ function formToHash()
 function doSearch()
 {
   lastSort = "coll_code";
-  document.getElementById("searchDiv").disabled = true;
+  document.getElementById("loaderDiv").classList.remove("hidden");
 
   fetch('search.php', {method: 'POST', credentials: 'same-origin', body: searchData}).then(
     response => results = response.text()
@@ -246,7 +246,7 @@ function doSearch()
       try
       {
         results = JSON.parse(txt);
-        document.getElementById("searchDiv").disabled = false;
+        document.getElementById("loaderDiv").classList.add("hidden");
         resInfo = results.pop();
         invalidateCache = false;
 
@@ -261,7 +261,7 @@ function doSearch()
         console.log("received response (saved in lastResponse):");
         console.log(txt);
         eval("lastResponse = txt");
-        document.getElementById("searchDiv").disabled = false;
+        document.getElementById("loaderDiv").classList.add("hidden");
         document.getElementById("resultTable").innerHTML = "";
         document.getElementById("tableNav").innerHTML = "An unkown error occured. Please check the console.";
       }
@@ -290,7 +290,7 @@ function noResults()
 
 function updateTable(maxRows, start, sortBy)
 {
-  if (results.length == 0)
+  if ((typeof(results) === "undefined") || (results.length == 0))
   {
     document.getElementById("resultTable").innerHTML = "";
     return;
