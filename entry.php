@@ -1,4 +1,4 @@
-<?
+<?php
   session_start();
 
   require_once("classes/database.inc.php");
