@@ -1,10 +1,7 @@
 <?php
 
-//require_once ("classes/CTemplate.inc.php");
-
 class CICSDSearch
 {
-
   //properties
   var $sql;
   var $params = array();
