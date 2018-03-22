@@ -8,7 +8,9 @@
   <link rel="stylesheet" type="text/css" href="css/modal.css" />
   <link rel="stylesheet" type="text/css" href="css/ui.css" />
   <link rel="stylesheet" type="text/css" href="css/search-mobile.css" />
+  <link rel="stylesheet" type="text/css" href="css/dropdown.css" />
   <script type="text/javascript" src="js/search.js"></script>
+  <script type="text/javascript" src="js/helper-gui.js"></script>
 </head>
 
 <body>
@@ -64,14 +66,79 @@
           <span class="float-like">
             <label for="laue">Laue group</label><br />
             <input name="laue" id="laue" placeholder="ex. 2/m" />
+            <div id="laue-list" class="dropdown-check-list" tabindex="100">
+              <span class="anchor">&#x1f527;</span>
+              <ul class="dropdown-items">
+                <li><input type="checkbox" class="laue-ckb" value="-1" />-1</li>
+                <li><input type="checkbox" class="laue-ckb" value="2/m" />2/m</li>
+                <li><input type="checkbox" class="laue-ckb" value="mmm" />mmm</li>
+                <li><input type="checkbox" class="laue-ckb" value="4/m" />4/m</li>
+                <li><input type="checkbox" class="laue-ckb" value="4/mmm" />4/mmm</li>
+                <li><input type="checkbox" class="laue-ckb" value="-3" />-3</li>
+                <li><input type="checkbox" class="laue-ckb" value="-3m" />-3m</li>
+                <li><input type="checkbox" class="laue-ckb" value="6/m" />6/m</li>
+                <li><input type="checkbox" class="laue-ckb" value="6/mmm" />6/mmm</li>
+                <li><input type="checkbox" class="laue-ckb" value="m-3" />m-3</li>
+                <li><input type="checkbox" class="laue-ckb" value="m-3m" />m-3m</li>
+              </ul>
+            </div>
           </span>
           <span class="float-like">
             <label for="class">Crystal class</label><br />
             <input name="class" id="class" placeholder="ex. mm2" />
+            <div id="class-list" class="dropdown-check-list" tabindex="100">
+              <span class="anchor">&#x1f527;</span>
+              <ul class="dropdown-items">
+                <li><input type="checkbox" class="class-ckb" value="1" />1</li>
+                <li><input type="checkbox" class="class-ckb" value="-1" />-1</li>
+                <li><input type="checkbox" class="class-ckb" value="2" />2</li>
+                <li><input type="checkbox" class="class-ckb" value="m" />m</li>
+                <li><input type="checkbox" class="class-ckb" value="2/m" />2/m</li>
+                <li><input type="checkbox" class="class-ckb" value="222" />222</li>
+                <li><input type="checkbox" class="class-ckb" value="mm2" />mm2</li>
+                <li><input type="checkbox" class="class-ckb" value="mmm" />mmm</li>
+                <li><input type="checkbox" class="class-ckb" value="4" />4</li>
+                <li><input type="checkbox" class="class-ckb" value="-4" />-4</li>
+                <li><input type="checkbox" class="class-ckb" value="4/m" />4/m</li>
+                <li><input type="checkbox" class="class-ckb" value="422" />422</li>
+                <li><input type="checkbox" class="class-ckb" value="4mm" />4mm</li>
+                <li><input type="checkbox" class="class-ckb" value="4/mmm" />4/mmm</li>
+                <li><input type="checkbox" class="class-ckb" value="-42m" />-42m</li>
+                <li><input type="checkbox" class="class-ckb" value="3" />3</li>
+                <li><input type="checkbox" class="class-ckb" value="-3" />-3</li>
+                <li><input type="checkbox" class="class-ckb" value="32" />32</li>
+                <li><input type="checkbox" class="class-ckb" value="3m" />3m</li>
+                <li><input type="checkbox" class="class-ckb" value="-3m" />-3m</li>
+                <li><input type="checkbox" class="class-ckb" value="6" />6</li>
+                <li><input type="checkbox" class="class-ckb" value="-6" />-6</li>
+                <li><input type="checkbox" class="class-ckb" value="6/m" />6/m</li>
+                <li><input type="checkbox" class="class-ckb" value="622" />622</li>
+                <li><input type="checkbox" class="class-ckb" value="6mm" />6mm</li>
+                <li><input type="checkbox" class="class-ckb" value="-6m2" />-6m2</li>
+                <li><input type="checkbox" class="class-ckb" value="6/mmm" />6/mmm</li>
+                <li><input type="checkbox" class="class-ckb" value="23" />23</li>
+                <li><input type="checkbox" class="class-ckb" value="m-3" />m-3</li>
+                <li><input type="checkbox" class="class-ckb" value="432" />432</li>
+                <li><input type="checkbox" class="class-ckb" value="-43m" />-43m</li>
+                <li><input type="checkbox" class="class-ckb" value="m-3m" />m-3m</li>
+              </ul>
+            </div>
           </span>
           <span class="float-like">
             <label for="system">Crystal system</label><br />
             <input name="system" id="system" placeholder="ex. hex" />
+            <div id="system-list" class="dropdown-check-list" tabindex="100">
+              <span class="anchor">&#x1f527;</span>
+              <ul class="dropdown-items">
+                <li><input type="checkbox" class="system-ckb" value="tric" />triclinic</li>
+                <li><input type="checkbox" class="system-ckb" value="mono" />monoclinic</li>
+                <li><input type="checkbox" class="system-ckb" value="ortho" />orthorhombic</li>
+                <li><input type="checkbox" class="system-ckb" value="tetra" />tetragonal</li>
+                <li><input type="checkbox" class="system-ckb" value="trig" />trigonal</li>
+                <li><input type="checkbox" class="system-ckb" value="hex" />hexagonal</li>
+                <li><input type="checkbox" class="system-ckb" value="cubic" />cubic</li>
+              </ul>
+            </div>
           </span>
           <span class="float-like">
             <label for="pol_cent">Acentric? Polar?</label><br />

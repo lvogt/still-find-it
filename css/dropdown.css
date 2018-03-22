@@ -1,0 +1,28 @@
+.dropdown-check-list {
+  display: inline-block;
+  width: 16px;
+  position: absolute;
+  bottom: 0;
+  right: 5px;
+  z-index: 250;
+}
+.dropdown-check-list .anchor {
+  position: relative;
+  cursor: pointer;
+}
+
+.dropdown-check-list ul.dropdown-items {
+  padding: 2px;
+  display: none;
+  margin: 4px 0 0 -126px;
+  border: 1px solid green;
+  position: absolute;
+  background: white;
+  width: 140px;
+  max-height: 140px;
+  overflow-y: scroll;
+}
+.dropdown-check-list ul.dropdown-items li {
+  list-style: none;
+  font-size: 80%;
+}

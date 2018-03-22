@@ -82,6 +82,8 @@ function init()
 
   document.getElementById("searchForm").onkeyup = (event) => { if (event.key == "Enter") formToHash(); }
 
+  setupDropdownLists();
+
   hashToSearch();
 }
 
@@ -272,6 +274,8 @@ function hashToSearch()
 
 function formToHash()
 {
+  closeHelper();
+
   var data = new FormData(document.getElementById("searchForm"));
   var hashString = "";
   for (var pair of data.entries())
