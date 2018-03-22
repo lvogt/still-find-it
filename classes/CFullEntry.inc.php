@@ -1,6 +1,7 @@
 <?php
 
 require_once("classes/CTemplate.inc.php");
+require_once("classes/helper.inc.php");
 
 class CFullEntry
 {
@@ -31,7 +32,7 @@ class CFullEntry
 
   function checkSessionCache($useID)
   {
-    if (session_status() != PHP_SESSION_ACTIVE)
+    if (!is_session_started())
       return false;
 
     if (!isset($_SESSION["entryCache"]))
@@ -66,8 +67,8 @@ class CFullEntry
 
   function cache()
   {
-    if (session_status() != PHP_SESSION_ACTIVE)
-      return;
+    if (!is_session_started())
+      return false;
 
     $_SESSION["entryCache"][$this->id.''] = $this->entry;
 

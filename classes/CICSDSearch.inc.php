@@ -1,5 +1,7 @@
 <?php
 
+require_once("classes/helper.inc.php");
+
 class CICSDSearch
 {
   //properties
@@ -37,7 +39,7 @@ class CICSDSearch
 
   function checkSessionCache()
   {
-    if (session_status() != PHP_SESSION_ACTIVE)
+    if (!is_session_started())
       return false;
 
     if (!isset($_SESSION["searchHash"]))
@@ -54,8 +56,8 @@ class CICSDSearch
 
   function cache()
   {
-    if (session_status() != PHP_SESSION_ACTIVE)
-      return;
+    if (!is_session_started())
+      return false;
 
     if (isset($_SESSION["searchLastIndex"]))
     {
@@ -74,8 +76,8 @@ class CICSDSearch
 
   function clearCache()
   {
-    if (session_status() != PHP_SESSION_ACTIVE)
-      return;
+    if (!is_session_started())
+      return false;
 
     unset($_SESSION["searchCache"]);
     unset($_SESSION["searchHash"]);

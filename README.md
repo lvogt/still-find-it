@@ -12,13 +12,13 @@ This is a new interface to the ICSD database. It requires the [ICSD Intranet ICS
 
 ### Server requirements
 * basically an webserver (apache, nginx, etc) should work
-* PHP version 5.4 or greater (support for 5.2 is easy; anything below needs a JSON_en/decode replacement)
+* PHP version 5.2 or greater (anything below needs a JSON_en/decode replacement)
 * only MySQLi is currently supported
 * session support is not needed but recommended (might change in the future)
 * MySQL version 5+ (tested/developed with 5.5 - **no** idea what is acutally needed...)
 
 ### Frontend requirements
-* tested with recent Firefox and Chrome
+* tested with *recent* Firefox and Chrome
 * IE will **not** work - and might never...
 * no idea about Edge
 * JavaScript!
