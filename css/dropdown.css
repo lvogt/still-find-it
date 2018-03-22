@@ -4,7 +4,6 @@
   position: absolute;
   bottom: 0;
   right: 5px;
-  z-index: 250;
 }
 .dropdown-check-list .anchor {
   position: relative;
@@ -21,6 +20,7 @@
   width: 140px;
   max-height: 140px;
   overflow-y: scroll;
+  z-index: 250;
 }
 .dropdown-check-list ul.dropdown-items li {
   list-style: none;
