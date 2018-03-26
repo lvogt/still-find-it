@@ -12,6 +12,7 @@ function setupDropdownLists()
       }
       else
       {
+        closeHelper();
         items.classList.add('visible');
         items.style.display = "block";
         helperOpen = lists[i].id;
