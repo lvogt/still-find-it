@@ -27,6 +27,11 @@
   font-size: 80%;
 }
 
+#tests-list > ul {
+  width: 240px;
+  margin-left: -226px;
+}
+
 #tests-list > ul > li {
   white-space: nowrap;
   border-bottom: 1px green dashed;
@@ -41,5 +46,5 @@
   vertical-align: middle;
   font-size: 80%;
   display: inline-block;
-  max-width: 100px;
+  max-width: 200px;
 }
