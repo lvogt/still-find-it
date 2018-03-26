@@ -147,7 +147,7 @@ function updateTestsInput()
 
 function updatePolCentCkbox()
 {
-  var matched = document.getElementById("pol_cent").value.match(/(acen|pol|cent)/g);
+  var matched = document.getElementById("pol_cent").value.match(/(acen|pol|cent|achi)/g);
   var ckb = document.getElementsByClassName("pol_cent-ckb");
   for (let i = 0; i < ckb.length; i++)
     ckb[i].checked = !((matched == null) || (matched.indexOf(ckb[i].value) === -1));

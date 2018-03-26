@@ -434,7 +434,7 @@ class CICSDSearch
 
     if (isset($this->params["pol_cent"])) // crystal class
     {
-      if (preg_match_all("/\s*(acen|pol|cent)\s*/", strtolower($this->params["pol_cent"]), $match))
+      if (preg_match_all("/\s*(acen|pol|cent|achi)\s*/", strtolower($this->params["pol_cent"]), $match))
       {
         $sqlSELECT .= ", space_group_number.pol_cent";
         $orList = array();
@@ -445,6 +445,7 @@ class CICSDSearch
             case "acen": $orList[] = '(pol_cent = "-")'; break;
             case "pol":  $orList[] = '(pol_cent = "p")'; break;
             case "cent": $orList[] = '(pol_cent = "c")'; break;
+            case "achi": $orList[] = '(hm_not IN ('222', '422', '32', '622', '23', '432', '1', '2', '4', '3', '6'))'; break;
             default: break;
           }
         }
