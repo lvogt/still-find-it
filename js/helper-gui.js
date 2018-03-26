@@ -21,6 +21,7 @@ function setupDropdownLists()
           case "laue-list": updateLaueCkbox(); break;
           case "class-list": updateClassCkbox(); break;
           case "system-list": updateSystemCkbox(); break;
+          case "tests-list": updateTestsCkbox(); break;
         }
       }
 
@@ -49,6 +50,7 @@ function closeHelper()
     case "laue-list": updateLaueInput(); break;
     case "class-list": updateClassInput(); break;
     case "system-list": updateSystemInput(); break;
+    case "tests-list": updateTestsInput(); break;
   }
 
   helperOpen = null;
@@ -118,4 +120,24 @@ function updateSystemInput()
       str += ", " + ckb[i].value;
   }
   document.getElementById("system").value = str.substr(2);
+}
+
+function updateTestsCkbox()
+{
+  var matched = document.getElementById("tests").value.match(/([1-9][0-9])/g);
+  var ckb = document.getElementsByClassName("tests-ckb");
+  for (let i = 0; i < ckb.length; i++)
+    ckb[i].checked = !((matched == null) || (matched.indexOf(ckb[i].value) === -1));
+}
+
+function updateTestsInput()
+{
+  var ckb = document.getElementsByClassName("tests-ckb");
+  var str = "";
+  for (let i = 0; i < ckb.length; i++)
+  {
+    if (ckb[i].checked)
+      str += ", " + ckb[i].value;
+  }
+  document.getElementById("tests").value = str.substr(2);
 }

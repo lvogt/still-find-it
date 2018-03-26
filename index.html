@@ -232,6 +232,26 @@
         <span class="float-like">
           <label for="tests">Test flags</label><br />
           <input name="tests" id="tests" placeholder="ex. 21, 22" />
+          <div id="tests-list" class="dropdown-check-list" tabindex="100">
+            <span class="anchor">&#x1f527;</span>
+            <ul class="dropdown-items">
+              <li><input type="checkbox" class="tests-ckb" value="21" /><span>Deviation of the nominal from refined formula tolerable.</span></li>
+              <li><input type="checkbox" class="tests-ckb" value="22" /><span>Deviation of the charge sum from zero tolerable.</span></li>
+              <li><input type="checkbox" class="tests-ckb" value="23" /><span>Deviation of calculated from measured density tolerable.</span></li>
+              <li><input type="checkbox" class="tests-ckb" value="51" /><span>No R value given in the paper.</span></li>
+              <li><input type="checkbox" class="tests-ckb" value="52" /><span>At least one temperature factor is implausible or meaningless.</span></li>
+              <li><input type="checkbox" class="tests-ckb" value="53" /><span>At least one temperature factor missing in the paper.</span></li>
+              <li><input type="checkbox" class="tests-ckb" value="54" /><span>A site occupation is implausible or meaningless.</span></li>
+              <li><input type="checkbox" class="tests-ckb" value="55" /><span>Deviation of lattice parameters from cystal system tolerable.</span></li>
+              <li><input type="checkbox" class="tests-ckb" value="56" /><span>The paper reports the temperature factors in a non-standard way and they are not included in the entry.</span></li>
+              <li><input type="checkbox" class="tests-ckb" value="60" /><span>Some ATFs physically meaningless.</span></li>
+              <li><input type="checkbox" class="tests-ckb" value="61" /><span>Some ATFs become plausible by permuting tf11->tf22->tf33 once.</span></li>
+              <li><input type="checkbox" class="tests-ckb" value="62" /><span>Some ATFs become plausible by permuting tf11->tf22->tf33 twice.</span></li>
+              <li><input type="checkbox" class="tests-ckb" value="74" /><span>Coordinates in the paper are obviously wrong.</span></li>
+              <li><input type="checkbox" class="tests-ckb" value="75" /><span>Coordinates in the paper are obviously wrong, here given corrected.</span></li>
+              <li><input type="checkbox" class="tests-ckb" value="76" /><span>Some atomic distances found unplausibly short.</span></li>
+            </ul>
+          </div>
         </span>
         <span class="float-like">
           <label for="remarks">Remarks</label><br />

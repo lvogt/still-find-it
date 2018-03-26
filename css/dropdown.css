@@ -2,7 +2,7 @@
   display: inline-block;
   width: 16px;
   position: absolute;
-  bottom: 0;
+  bottom: 1px;
   right: 5px;
 }
 .dropdown-check-list .anchor {
@@ -25,4 +25,21 @@
 .dropdown-check-list ul.dropdown-items li {
   list-style: none;
   font-size: 80%;
+}
+
+#tests-list > ul > li {
+  white-space: nowrap;
+  border-bottom: 1px green dashed;
+}
+
+#tests-list > ul > li:last-child {
+  border: none;
+}
+
+#tests-list > ul > li > span {
+  white-space: normal;
+  vertical-align: middle;
+  font-size: 80%;
+  display: inline-block;
+  max-width: 100px;
 }
