@@ -22,6 +22,7 @@ function setupDropdownLists()
           case "class-list": updateClassCkbox(); break;
           case "system-list": updateSystemCkbox(); break;
           case "tests-list": updateTestsCkbox(); break;
+          case "pol_cent-list": updatePolCentCkbox(); break;
         }
       }
 
@@ -51,6 +52,7 @@ function closeHelper()
     case "class-list": updateClassInput(); break;
     case "system-list": updateSystemInput(); break;
     case "tests-list": updateTestsInput(); break;
+    case "pol_cent-list": updatePolCentInput(); break;
   }
 
   helperOpen = null;
@@ -140,4 +142,24 @@ function updateTestsInput()
       str += ", " + ckb[i].value;
   }
   document.getElementById("tests").value = str.substr(2);
+}
+
+function updatePolCentCkbox()
+{
+  var matched = document.getElementById("pol_cent").value.match(/(acen|pol|cent)/g);
+  var ckb = document.getElementsByClassName("pol_cent-ckb");
+  for (let i = 0; i < ckb.length; i++)
+    ckb[i].checked = !((matched == null) || (matched.indexOf(ckb[i].value) === -1));
+}
+
+function updatePolCentInput()
+{
+  var ckb = document.getElementsByClassName("pol_cent-ckb");
+  var str = "";
+  for (let i = 0; i < ckb.length; i++)
+  {
+    if (ckb[i].checked)
+      str += ", " + ckb[i].value;
+  }
+  document.getElementById("pol_cent").value = str.substr(2);
 }
