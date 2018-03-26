@@ -445,7 +445,7 @@ class CICSDSearch
             case "acen": $orList[] = '(pol_cent = "-")'; break;
             case "pol":  $orList[] = '(pol_cent = "p")'; break;
             case "cent": $orList[] = '(pol_cent = "c")'; break;
-            case "achi": $orList[] = '(hm_not IN ('222', '422', '32', '622', '23', '432', '1', '2', '4', '3', '6'))'; break;
+            case "achi": $orList[] = "(hm_not IN ('222', '422', '32', '622', '23', '432', '1', '2', '4', '3', '6'))"; break;
             default: break;
           }
         }
