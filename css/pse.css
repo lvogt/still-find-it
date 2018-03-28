@@ -1,0 +1,228 @@
+h2 {
+  font-size: 0.5em;
+}
+
+ol, li {
+  margin: 0;
+  padding: 0;
+  float: none;
+  list-style-type: none;
+}
+
+.element {
+  background: #ccc;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 8pt;
+  padding-top: 3px;
+  cursor: pointer;
+}
+
+@supports (not(display: grid)) and (not(display:flex)) {
+  .element {
+    float: left;
+    min-width: 20px;
+    min-height: 20px;
+    margin: 3px;
+  }
+}
+
+@supports (not(display: grid)) and (display:flex) {
+  .wrapper {
+    display:flex;
+    flex-wrap: wrap;
+  }
+  .element {
+    flex-grow: 1;
+    flex-basis:20px;
+    min-height: 20px;
+    margin: 3px;
+  }
+  .lanthanoid, .actinoid {
+    visibility:hidden;
+  }
+}
+
+[data-element-group="non-metal"], [data-element-group="nonmetal"] {
+  background-color: yellow;
+}
+
+[data-element-group="metal"] {
+
+}
+
+[data-element-group="halogen"] {
+  background-color: coral;
+}
+
+[data-element-group="metalloid"] {
+  background-color: #FF9999;
+}
+
+[data-element-group="metal"] {
+  background-color: #FFCCCC;
+}
+[data-element-group="alkali-metal"] {
+  background-color: #33CCFF;
+}
+[data-element-group="alkaline-earth-metal"] {
+  background-color: #FFCC99;
+}
+[data-element-group="transition-metal"] {
+  background-color: #66FF66;
+}
+[data-element-group="noble-gas"] {
+  background-color: #FF99FF;
+}
+[data-element-group="lanthanoid"] {
+  background-color: #99FFCC;
+}
+[data-element-group="actinoid"] {
+  background-color: #33CCCC;
+}
+
+@supports (display: grid) {
+  .wrapper {
+    display: grid;
+    grid-gap: 3px;
+    grid-template-columns: repeat(18, 1fr);
+    grid-template-rows: repeat(9, 25px);
+    max-width: 470px;
+    margin: 0.5em auto;
+  }
+
+  .actinoid {
+    grid-column:3;
+    grid-row:7;
+  }
+
+  .lanthanoid {
+      grid-column:3;
+      grid-row:6;
+  }
+
+  .feature-element {
+    grid-column: 3/9;
+    grid-row: 2/4;
+    background: #eee;
+  }
+
+  .h   { grid-column:1;  grid-row:1; }
+  .he { grid-column:18; grid-row:1; }
+  .li { grid-column:1;  grid-row:2; }
+  .be { grid-column:2;  grid-row:2; }
+  .b   { grid-column:13; grid-row:2; }
+  .c   { grid-column:14; grid-row:2; }
+  .n   { grid-column:15; grid-row:2; }
+  .o   { grid-column:16; grid-row:2; }
+  .f   { grid-column:17; grid-row:2; }
+  .ne { grid-column:18; grid-row:2; }
+  .na { grid-column:1;  grid-row:3; }
+  .mg { grid-column:2;  grid-row:3; }
+  .al { grid-column:13; grid-row:3; }
+  .si { grid-column:14; grid-row:3; }
+  .p   { grid-column:15; grid-row:3; }
+  .s   { grid-column:16; grid-row:3; }
+  .cl { grid-column:17; grid-row:3; }
+  .ar { grid-column:18; grid-row:3; }
+  .k   { grid-column:1;  grid-row:4; }
+  .ca { grid-column:2;  grid-row:4; }
+  .sc { grid-column:3;  grid-row:4; }
+  .ti { grid-column:4;  grid-row:4; }
+  .v   { grid-column:5;  grid-row:4; }
+  .cr { grid-column:6;  grid-row:4; }
+  .mn { grid-column:7;  grid-row:4; }
+  .fe { grid-column:8;  grid-row:4; }
+  .co { grid-column:9;  grid-row:4; }
+  .ni { grid-column:10; grid-row:4; }
+  .cu { grid-column:11; grid-row:4; }
+  .zn { grid-column:12; grid-row:4; }
+  .ga { grid-column:13; grid-row:4; }
+  .ge { grid-column:14; grid-row:4; }
+  .as { grid-column:15; grid-row:4; }
+  .se { grid-column:16; grid-row:4; }
+  .br { grid-column:17; grid-row:4; }
+  .kr { grid-column:18; grid-row:4; }
+  .rb { grid-column:1;  grid-row:5; }
+  .sr { grid-column:2;  grid-row:5; }
+  .y   { grid-column:3;  grid-row:5; }
+  .zr { grid-column:4;  grid-row:5; }
+  .nb { grid-column:5;  grid-row:5; }
+  .mo { grid-column:6;  grid-row:5; }
+  .tc { grid-column:7;  grid-row:5; }
+  .ru { grid-column:8;  grid-row:5; }
+  .rh { grid-column:9;  grid-row:5; }
+  .pd { grid-column:10; grid-row:5; }
+  .ag { grid-column:11; grid-row:5; }
+  .cd { grid-column:12; grid-row:5; }
+  .in { grid-column:13; grid-row:5; }
+  .sn { grid-column:14; grid-row:5; }
+  .sb { grid-column:15; grid-row:5; }
+  .te { grid-column:16; grid-row:5; }
+  .i   { grid-column:17; grid-row:5; }
+  .xe { grid-column:18; grid-row:5; }
+  .cs { grid-column:1;  grid-row:6; }
+  .ba { grid-column:2;  grid-row:6; }
+  .hf { grid-column:4;  grid-row:6; }
+  .ta { grid-column:5;  grid-row:6; }
+  .w   { grid-column:6;  grid-row:6; }
+  .re { grid-column:7;  grid-row:6; }
+  .os { grid-column:8;  grid-row:6; }
+  .ir { grid-column:9;  grid-row:6; }
+  .pt { grid-column:10; grid-row:6; }
+  .au { grid-column:11; grid-row:6; }
+  .hg { grid-column:12; grid-row:6; }
+  .tl { grid-column:13; grid-row:6; }
+  .pb { grid-column:14; grid-row:6; }
+  .bi { grid-column:15; grid-row:6; }
+  .po { grid-column:16; grid-row:6; }
+  .at { grid-column:17; grid-row:6; }
+  .rn { grid-column:18; grid-row:6; }
+  .fr { grid-column:1;  grid-row:7; }
+  .ra { grid-column:2;  grid-row:7; }
+  .rf { grid-column:4;  grid-row:7; }
+  .db { grid-column:5;  grid-row:7; }
+  .sg { grid-column:6;  grid-row:7; }
+  .bh { grid-column:7;  grid-row:7; }
+  .hs { grid-column:8;  grid-row:7; }
+  .mt { grid-column:9;  grid-row:7; }
+  .ds { grid-column:10; grid-row:7; }
+  .rg { grid-column:11; grid-row:7; }
+  .cn { grid-column:12; grid-row:7; }
+  .nh { grid-column:13; grid-row:7; }
+  .fl { grid-column:14; grid-row:7; }
+  .mc { grid-column:15; grid-row:7; }
+  .lv { grid-column:16; grid-row:7; }
+  .ts { grid-column:17; grid-row:7; }
+  .og { grid-column:18; grid-row:7; }
+  .la { grid-column:3;  grid-row:8; }
+  .ce { grid-column:4;  grid-row:8; }
+  .pr { grid-column:5;  grid-row:8; }
+  .nd { grid-column:6;  grid-row:8; }
+  .pm { grid-column:7;  grid-row:8; }
+  .sm { grid-column:8;  grid-row:8; }
+  .eu { grid-column:9;  grid-row:8; }
+  .gd { grid-column:10; grid-row:8; }
+  .tb { grid-column:11; grid-row:8; }
+  .dy { grid-column:12; grid-row:8; }
+  .ho { grid-column:13; grid-row:8; }
+  .er { grid-column:14; grid-row:8; }
+  .tm { grid-column:15; grid-row:8; }
+  .yb { grid-column:16; grid-row:8; }
+  .lu { grid-column:17; grid-row:8; }
+  .ac { grid-column:3;  grid-row:9; }
+  .th { grid-column:4;  grid-row:9; }
+  .pa { grid-column:5;  grid-row:9; }
+  .u   { grid-column:6;  grid-row:9; }
+  .np { grid-column:7;  grid-row:9; }
+  .pu { grid-column:8;  grid-row:9; }
+  .am { grid-column:9;  grid-row:9; }
+  .cm { grid-column:10; grid-row:9; }
+  .bk { grid-column:11; grid-row:9; }
+  .cf { grid-column:12; grid-row:9; }
+  .es { grid-column:13; grid-row:9; }
+  .fm { grid-column:14; grid-row:9; }
+  .md { grid-column:15; grid-row:9; }
+  .no { grid-column:16; grid-row:9; }
+  .lr { grid-column:17; grid-row:9; }
+}

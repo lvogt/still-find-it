@@ -9,6 +9,7 @@
   <link rel="stylesheet" type="text/css" href="css/ui.css" />
   <link rel="stylesheet" type="text/css" href="css/search-mobile.css" />
   <link rel="stylesheet" type="text/css" href="css/dropdown.css" />
+  <link rel="stylesheet" type="text/css" href="css/pse.css" />
   <script type="text/javascript" src="js/search.js"></script>
   <script type="text/javascript" src="js/helper-gui.js"></script>
 </head>
@@ -34,6 +35,133 @@
           <span class="float-like">
             <label for="exclude">Exclude elements</label><br />
             <input name="exclude" id="exclude" placeholder="ex. Cs Te" />
+            <div id="exclude-list" class="dropdown" tabindex="100">
+              <span class="anchor">&#x1f527;</span>
+              <div class="dropdown-items">
+                <ol class="periodic-table wrapper">
+                  <li data-element-group="nonmetal" data-group="1" data-period="1" class="element h">H</li>
+                  <li data-element-group="noble-gas" data-group="18" data-period="1" class="element he">He</li>
+                  <li data-element-group="alkali-metal" data-group="1" data-period="2" class="element li">Li</li>
+                  <li data-element-group="alkaline-earth-metal" data-group="2" data-period="2" class="element be">Be</li>
+                  <li data-element-group="metalloid" data-group="13" data-period="2" class="element b">B</li>
+                  <li data-element-group="nonmetal" data-group="14" data-period="2" class="element c">C</li>
+                  <li data-element-group="nonmetal" data-group="15" data-period="2" class="element n">N</li>
+                  <li data-element-group="nonmetal" data-group="16" data-period="2" class="element o">O</li>
+                  <li data-element-group="halogen" data-group="17" data-period="2" class="element f">F</li>
+                  <li data-element-group="noble-gas" data-group="18" data-period="2" class="element ne">Ne</li>
+                  <li data-element-group="alkali-metal" data-group="1" data-period="3" class="element na">Na</li>
+                  <li data-element-group="alkaline-earth-metal" data-group="2" data-period="3" class="element mg">Mg</li>
+                  <li data-element-group="metal" data-group="13" data-period="3" class="element al">Al</li>
+                  <li data-element-group="metalloid" data-group="14" data-period="3" class="element si">Si</li>
+                  <li data-element-group="nonmetal" data-group="15" data-period="3" class="element p">P</li>
+                  <li data-element-group="nonmetal" data-group="16" data-period="3" class="element s">S</li>
+                  <li data-element-group="halogen" data-group="17" data-period="3" class="element cl">Cl</li>
+                  <li data-element-group="noble-gas" data-group="18" data-period="3" class="element ar">Ar</li>
+                  <li data-element-group="alkali-metal" data-group="1" data-period="4" class="element k">K</li>
+                  <li data-element-group="alkaline-earth-metal" data-group="2" data-period="4" class="element ca">Ca</li>
+                  <li data-element-group="transition-metal" data-group="3" data-period="4" class="element sc">Sc</li>
+                  <li data-element-group="transition-metal" data-group="4" data-period="4" class="element ti">Ti</li>
+                  <li data-element-group="transition-metal" data-group="5" data-period="4" class="element v">V</li>
+                  <li data-element-group="transition-metal" data-group="6" data-period="4" class="element cr">Cr</li>
+                  <li data-element-group="transition-metal" data-group="7" data-period="4" class="element mn">Mn</li>
+                  <li data-element-group="transition-metal" data-group="8" data-period="4" class="element fe">Fe</li>
+                  <li data-element-group="transition-metal" data-group="9" data-period="4" class="element co">Co</li>
+                  <li data-element-group="transition-metal" data-group="10" data-period="4" class="element ni">Ni</li>
+                  <li data-element-group="transition-metal" data-group="11" data-period="4" class="element cu">Cu</li>
+                  <li data-element-group="transition-metal" data-group="12" data-period="4" class="element zn">Zn</li>
+                  <li data-element-group="metal" data-group="13" data-period="4" class="element ga">Ga</li>
+                  <li data-element-group="metalloid" data-group="14" data-period="4" class="element ge">Ge</li>
+                  <li data-element-group="metalloid" data-group="15" data-period="4" class="element as">As</li>
+                  <li data-element-group="nonmetal" data-group="16" data-period="4" class="element se">Se</li>
+                  <li data-element-group="halogen" data-group="17" data-period="4" class="element br">Br</li>
+                  <li data-element-group="noble-gas" data-group="18" data-period="4" class="element kr">Kr</li>
+                  <li data-element-group="alkali-metal" data-group="1" data-period="5" class="element rb">Rb</li>
+                  <li data-element-group="alkaline-earth-metal" data-group="2" data-period="5" class="element sr">Sr</li>
+                  <li data-element-group="transition-metal" data-group="3" data-period="5" class="element y">Y</li>
+                  <li data-element-group="transition-metal" data-group="4" data-period="5" class="element zr">Zr</li>
+                  <li data-element-group="transition-metal" data-group="5" data-period="5" class="element nb">Nb</li>
+                  <li data-element-group="transition-metal" data-group="6" data-period="5" class="element mo">Mo</li>
+                  <li data-element-group="transition-metal" data-group="7" data-period="5" class="element tc">Tc</li>
+                  <li data-element-group="transition-metal" data-group="8" data-period="5" class="element ru">Ru</li>
+                  <li data-element-group="transition-metal" data-group="9" data-period="5" class="element rh">Rh</li>
+                  <li data-element-group="transition-metal" data-group="10" data-period="5" class="element pd">Pd</li>
+                  <li data-element-group="transition-metal" data-group="11" data-period="5" class="element ag">Ag</li>
+                  <li data-element-group="transition-metal" data-group="12" data-period="5" class="element cd">Cd</li>
+                  <li data-element-group="metal" data-group="13" data-period="5" class="element in">In</li>
+                  <li data-element-group="metal" data-group="14" data-period="5" class="element sn">Sn</li>
+                  <li data-element-group="metalloid" data-group="15" data-period="5" class="element sb">Sb</li>
+                  <li data-element-group="metalloid" data-group="16" data-period="5" class="element te">Te</li>
+                  <li data-element-group="halogen" data-group="17" data-period="5" class="element i">I</li>
+                  <li data-element-group="noble-gas" data-group="18" data-period="5" class="element xe">Xe</li>
+                  <li data-element-group="alkali-metal" data-group="1" data-period="6" class="element cs">Cs</li>
+                  <li data-element-group="alkaline-earth-metal" data-group="2" data-period="6" class="element ba">Ba</li>
+                  <li data-element-group="lanthanoid" data-group="2" data-period="6" class="element la">La</li>
+                  <li data-element-group="lanthanoid" data-group="3" data-period="6" class="element ce">Ce</li>
+                  <li data-element-group="lanthanoid" data-group="4" data-period="6" class="element pr">Pr</li>
+                  <li data-element-group="lanthanoid" data-group="5" data-period="6" class="element nd">Nd</li>
+                  <li data-element-group="lanthanoid" data-group="6" data-period="6" class="element pm">Pm</li>
+                  <li data-element-group="lanthanoid" data-group="7" data-period="6" class="element sm">Sm</li>
+                  <li data-element-group="lanthanoid" data-group="8" data-period="6" class="element eu">Eu</li>
+                  <li data-element-group="lanthanoid" data-group="9" data-period="6" class="element gd">Gd</li>
+                  <li data-element-group="lanthanoid" data-group="10" data-period="6" class="element tb">Tb</li>
+                  <li data-element-group="lanthanoid" data-group="11" data-period="6" class="element dy">Dy</li>
+                  <li data-element-group="lanthanoid" data-group="12" data-period="6" class="element ho">Ho</li>
+                  <li data-element-group="lanthanoid" data-group="13" data-period="6" class="element er">Er</li>
+                  <li data-element-group="lanthanoid" data-group="14" data-period="6" class="element tm">Tm</li>
+                  <li data-element-group="lanthanoid" data-group="15" data-period="6" class="element yb">Yb</li>
+                  <li data-element-group="lanthanoid" data-group="16" data-period="6" class="element lu">Lu</li>
+                  <li data-element-group="transition-metal" data-group="4" data-period="6" class="element hf">Hf</li>
+                  <li data-element-group="transition-metal" data-group="5" data-period="6" class="element ta">Ta</li>
+                  <li data-element-group="transition-metal" data-group="6" data-period="6" class="element w">W</li>
+                  <li data-element-group="transition-metal" data-group="7" data-period="6" class="element re">Re</li>
+                  <li data-element-group="transition-metal" data-group="8" data-period="6" class="element os">Os</li>
+                  <li data-element-group="transition-metal" data-group="9" data-period="6" class="element ir">Ir</li>
+                  <li data-element-group="transition-metal" data-group="10" data-period="6" class="element pt">Pt</li>
+                  <li data-element-group="transition-metal" data-group="11" data-period="6" class="element au">Au</li>
+                  <li data-element-group="transition-metal" data-group="12" data-period="6" class="element hg">Hg</li>
+                  <li data-element-group="metal" data-group="13" data-period="6" class="element tl">Tl</li>
+                  <li data-element-group="metal" data-group="14" data-period="6" class="element pb">Pb</li>
+                  <li data-element-group="metal" data-group="15" data-period="6" class="element bi">Bi</li>
+                  <li data-element-group="metalloid" data-group="16" data-period="6" class="element po">Po</li>
+                  <li data-element-group="halogen" data-group="17" data-period="6" class="element at">At</li>
+                  <li data-element-group="noble-gas" data-group="18" data-period="6" class="element rn">Rn</li>
+                  <li data-element-group="alkali-metal" data-group="1" data-period="7" class="element fr">Fr</li>
+                  <li data-element-group="alkaline-earth-metal" data-group="2" data-period="7" class="element ra">Ra</li>
+                  <li data-element-group="actinoid" data-group="2" data-period="7" class="element ac">Ac</li>
+                  <li data-element-group="actinoid" data-group="3" data-period="7" class="element th">Th</li>
+                  <li data-element-group="actinoid" data-group="4" data-period="7" class="element pa">Pa</li>
+                  <li data-element-group="actinoid" data-group="5" data-period="7" class="element u">U</li>
+                  <li data-element-group="actinoid" data-group="6" data-period="7" class="element np">Np</li>
+                  <li data-element-group="actinoid" data-group="7" data-period="7" class="element pu">Pu</li>
+                  <li data-element-group="actinoid" data-group="8" data-period="7" class="element am">Am</li>
+                  <li data-element-group="actinoid" data-group="9" data-period="7" class="element cm">Cm</li>
+                  <li data-element-group="actinoid" data-group="10" data-period="7" class="element bk">Bk</li>
+                  <li data-element-group="actinoid" data-group="11" data-period="7" class="element cf">Cf</li>
+                  <li data-element-group="actinoid" data-group="12" data-period="7" class="element es">Es</li>
+                  <li data-element-group="actinoid" data-group="13" data-period="7" class="element fm">Fm</li>
+                  <li data-element-group="actinoid" data-group="14" data-period="7" class="element md">Md</li>
+                  <li data-element-group="actinoid" data-group="15" data-period="7" class="element no">No</li>
+                  <li data-element-group="actinoid" data-group="16" data-period="7" class="element lr">Lr</li>
+                  <li data-element-group="transition-metal" data-group="4" data-period="7" class="element rf">Rf</li>
+                  <li data-element-group="transition-metal" data-group="5" data-period="7" class="element db">Db</li>
+                  <li data-element-group="transition-metal" data-group="6" data-period="7" class="element sg">Sg</li>
+                  <li data-element-group="transition-metal" data-group="7" data-period="7" class="element bh">Bh</li>
+                  <li data-element-group="transition-metal" data-group="8" data-period="7" class="element hs">Hs</li>
+                  <li data-element-group="transition-metal" data-group="9" data-period="7" class="element mt">Mt</li>
+                  <li data-element-group="transition-metal" data-group="10" data-period="7" class="element ds">Ds</li>
+                  <li data-element-group="transition-metal" data-group="11" data-period="7" class="element rg">Rg</li>
+                  <li data-element-group="transition-metal" data-group="12" data-period="7" class="element cn">Cn</li>
+                  <li data-element-group="metal" data-group="13" data-period="7" class="element nh">Nh</li>
+                  <li data-element-group="metal" data-group="14" data-period="7" class="element fl">Fl</li>
+                  <li data-element-group="metal" data-group="15" data-period="7" class="element mc">Mc</li>
+                  <li data-element-group="metal" data-group="16" data-period="7" class="element lv">Lv</li>
+                  <li data-element-group="halogen" data-group="17" data-period="7" class="element ts">Ts</li>
+                  <li data-element-group="noble-gas" data-group="18" data-period="7" class="element og">Og</li>
+                  <div class="element lanthanoid" data-element-group="lanthanoid"></div>
+                  <div class="element actinoid" data-element-group="actinoid"></div>
+                 </ol>
+              </div>
+            </div>
           </span>
           <span class="float-like">
             <label for="ox">Oxidation State</label><br />
@@ -66,7 +194,7 @@
           <span class="float-like">
             <label for="laue">Laue group</label><br />
             <input name="laue" id="laue" placeholder="ex. 2/m" />
-            <div id="laue-list" class="dropdown-check-list" tabindex="100">
+            <div id="laue-list" class="dropdown" tabindex="100">
               <span class="anchor">&#x1f527;</span>
               <ul class="dropdown-items">
                 <li><label><input type="checkbox" class="laue-ckb" value="-1" />-1</label></li>
@@ -86,7 +214,7 @@
           <span class="float-like">
             <label for="class">Crystal class</label><br />
             <input name="class" id="class" placeholder="ex. mm2" />
-            <div id="class-list" class="dropdown-check-list" tabindex="100">
+            <div id="class-list" class="dropdown" tabindex="100">
               <span class="anchor">&#x1f527;</span>
               <ul class="dropdown-items">
                 <li><label><input type="checkbox" class="class-ckb" value="1" />1</label></li>
@@ -127,7 +255,7 @@
           <span class="float-like">
             <label for="system">Crystal system</label><br />
             <input name="system" id="system" placeholder="ex. hex" />
-            <div id="system-list" class="dropdown-check-list" tabindex="100">
+            <div id="system-list" class="dropdown" tabindex="100">
               <span class="anchor">&#x1f527;</span>
               <ul class="dropdown-items">
                 <li><label><input type="checkbox" class="system-ckb" value="tric" />triclinic</label></li>
@@ -143,7 +271,7 @@
           <span class="float-like">
             <label for="pol_cent">Acentric? Polar?</label><br />
             <input name="pol_cent" id="pol_cent" placeholder="ex. pol, acent" />
-            <div id="pol_cent-list" class="dropdown-check-list" tabindex="100">
+            <div id="pol_cent-list" class="dropdown" tabindex="100">
               <span class="anchor">&#x1f527;</span>
               <ul class="dropdown-items">
                 <li><label><input type="checkbox" class="pol_cent-ckb" value="achi" />Achiral?</label></li>
@@ -241,7 +369,7 @@
         <span class="float-like">
           <label for="tests">Test flags</label><br />
           <input name="tests" id="tests" placeholder="ex. 21, 22" />
-          <div id="tests-list" class="dropdown-check-list" tabindex="100">
+          <div id="tests-list" class="dropdown" tabindex="100">
             <span class="anchor">&#x1f527;</span>
             <ul class="dropdown-items">
               <li><label><input type="checkbox" class="tests-ckb" value="21" /><span>Deviation of the nominal from refined formula tolerable.</span></label></li>

@@ -1,6 +1,6 @@
 function setupDropdownLists()
 {
-  var lists = document.getElementsByClassName("dropdown-check-list");
+  var lists = document.getElementsByClassName("dropdown");
   for (let i = 0; i < lists.length; i++)
   {
     lists[i].getElementsByClassName('anchor')[0].onclick = function(evt)

@@ -1,16 +1,16 @@
-.dropdown-check-list {
+.dropdown {
   display: inline-block;
   width: 16px;
   position: absolute;
   bottom: 1px;
   right: 5px;
 }
-.dropdown-check-list .anchor {
+.dropdown .anchor {
   position: relative;
   cursor: pointer;
 }
 
-.dropdown-check-list ul.dropdown-items {
+.dropdown .dropdown-items {
   padding: 2px;
   display: none;
   margin: 4px 0 0 -126px;
@@ -22,15 +22,21 @@
   overflow-y: scroll;
   z-index: 250;
 }
-.dropdown-check-list ul.dropdown-items li {
+.dropdown .dropdown-items li {
   list-style: none;
   font-size: 80%;
 }
 
-.dropdown-check-list ul.dropdown-items li > label {
+.dropdown .dropdown-items li > label {
   display: block;
   font-size: 100%;
   padding: 0;
+}
+
+#exclude-list > div {
+  width: 480px;
+  max-height: unset;
+  overflow: unset;
 }
 
 #tests-list > ul {
