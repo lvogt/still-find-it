@@ -27,6 +27,12 @@
   font-size: 80%;
 }
 
+.dropdown-check-list ul.dropdown-items li > label {
+  display: block;
+  font-size: 100%;
+  padding: 0;
+}
+
 #tests-list > ul {
   width: 240px;
   margin-left: -226px;
@@ -41,7 +47,7 @@
   border: none;
 }
 
-#tests-list > ul > li > span {
+#tests-list > ul > li > label > span {
   white-space: normal;
   vertical-align: middle;
   font-size: 80%;
