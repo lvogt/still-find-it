@@ -875,10 +875,15 @@ class CICSDSearch
                                "Ni", "Cu", "Zn", "Ga", "Ge", "As", "Se", "Br", "Kr");
       case "5PE": return array("Rb", "Sr", "Y", "Zr", "Nb", "Mo", "Tc", "Ru", "Rh",
                                "Pd", "Ag", "Cd", "In", "Sn", "Sb", "Te", "I", "Xe");
-      case "6PE": return array("Cs", "Ba", "Hf", "Ta", "W", "Re", "Os", "Ir", "Pt",
+      case "6PE": return array("Cs", "Ba", "La", "Hf", "Ta", "W", "Re", "Os", "Ir", "Pt",
                                "Au", "Hg", "Tl", "Pb", "Bi", "Po", "At", "Rn");
       case "7PE": return array("Fr", "Ra", "Ac", "Rf", "Ha", "Sg", "Bh", "Hs", "Mt",
                                "Ds", "Rg", "Cn", "Nh", "Fl", "Mc", "Lv", "Ts", "Og");
+
+      case "1TR": return array("Sc", "Ti", "V", "Cr", "Mn", "Fe", "Co", "Ni", "Cu", "Zn");
+      case "2TR": return array("Y", "Zr", "Nb", "Mo", "Tc", "Ru", "Rh", "Pd", "Ag", "Cd");
+      case "3TR": return array("La", "Hf", "Ta", "W", "Re", "Os", "Ir", "Pt", "Au", "Hg");
+      case "4TR": return array("Ac", "Rf", "Ha", "Sg", "Bh", "Hs", "Mt", "Ds", "Rg", "Cn");
 
       //special groups
       case "LAN": return array("La", "Ce", "Pr", "Nd", "Pm", "Sm", "Eu", "Gd",
