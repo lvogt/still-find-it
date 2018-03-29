@@ -869,22 +869,22 @@ class CICSDSearch
       case "ZNG": return array("Zn", "Cd", "Hg", "Cn");
 
       //period
-      case "1PE": return array("H", "D", "T", "He");
-      case "2PE": return array("Li", "Be", "B", "C", "N", "O", "F", "Ne");
-      case "3PE": return array("Na", "Mg", "Al", "Si", "P", "S", "Cl", "Ar");
-      case "4PE": return array("K", "Ca", "Sc", "Ti", "V", "Cr", "Mn", "Fe", "Co",
+      case "HP": return array("H", "D", "T", "He");
+      case "LIP": return array("Li", "Be", "B", "C", "N", "O", "F", "Ne");
+      case "NAP": return array("Na", "Mg", "Al", "Si", "P", "S", "Cl", "Ar");
+      case "KP": return array("K", "Ca", "Sc", "Ti", "V", "Cr", "Mn", "Fe", "Co",
                                "Ni", "Cu", "Zn", "Ga", "Ge", "As", "Se", "Br", "Kr");
-      case "5PE": return array("Rb", "Sr", "Y", "Zr", "Nb", "Mo", "Tc", "Ru", "Rh",
+      case "RBP": return array("Rb", "Sr", "Y", "Zr", "Nb", "Mo", "Tc", "Ru", "Rh",
                                "Pd", "Ag", "Cd", "In", "Sn", "Sb", "Te", "I", "Xe");
-      case "6PE": return array("Cs", "Ba", "La", "Hf", "Ta", "W", "Re", "Os", "Ir", "Pt",
+      case "CSP": return array("Cs", "Ba", "La", "Hf", "Ta", "W", "Re", "Os", "Ir", "Pt",
                                "Au", "Hg", "Tl", "Pb", "Bi", "Po", "At", "Rn");
-      case "7PE": return array("Fr", "Ra", "Ac", "Rf", "Ha", "Sg", "Bh", "Hs", "Mt",
+      case "FRP": return array("Fr", "Ra", "Ac", "Rf", "Ha", "Sg", "Bh", "Hs", "Mt",
                                "Ds", "Rg", "Cn", "Nh", "Fl", "Mc", "Lv", "Ts", "Og");
 
-      case "1TR": return array("Sc", "Ti", "V", "Cr", "Mn", "Fe", "Co", "Ni", "Cu", "Zn");
-      case "2TR": return array("Y", "Zr", "Nb", "Mo", "Tc", "Ru", "Rh", "Pd", "Ag", "Cd");
-      case "3TR": return array("La", "Hf", "Ta", "W", "Re", "Os", "Ir", "Pt", "Au", "Hg");
-      case "4TR": return array("Ac", "Rf", "Ha", "Sg", "Bh", "Hs", "Mt", "Ds", "Rg", "Cn");
+      case "SCP": return array("Sc", "Ti", "V", "Cr", "Mn", "Fe", "Co", "Ni", "Cu", "Zn");
+      case "YP": return array("Y", "Zr", "Nb", "Mo", "Tc", "Ru", "Rh", "Pd", "Ag", "Cd");
+      case "LAP": return array("La", "Hf", "Ta", "W", "Re", "Os", "Ir", "Pt", "Au", "Hg");
+      case "ACP": return array("Ac", "Rf", "Ha", "Sg", "Bh", "Hs", "Mt", "Ds", "Rg", "Cn");
 
       //special groups
       case "LAN": return array("La", "Ce", "Pr", "Nd", "Pm", "Sm", "Eu", "Gd",

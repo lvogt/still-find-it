@@ -42,17 +42,17 @@ function setupDropdownLists()
       var el = evt.target.innerHTML;
       switch (el)
       {
-        case "TR1": el = "1TR"; break;
-        case "TR2": el = "2TR"; break;
-        case "TR3": el = "3TR"; break;
-        case "TR4": el = "4TR"; break;
-        case "P1": el = "1PE"; break;
-        case "P2": el = "2PE"; break;
-        case "P3": el = "3PE"; break;
-        case "P4": el = "4PE"; break;
-        case "P5": el = "5PE"; break;
-        case "P6": el = "6PE"; break;
-        case "P7": el = "7PE"; break;
+        case "TR1": el = "SCP"; break;
+        case "TR2": el = "YP"; break;
+        case "TR3": el = "LAP"; break;
+        case "TR4": el = "ACP"; break;
+        case "P1": el = "HP"; break;
+        case "P2": el = "LIP"; break;
+        case "P3": el = "NAP"; break;
+        case "P4": el = "KP"; break;
+        case "P5": el = "RBP"; break;
+        case "P6": el = "CSP"; break;
+        case "P7": el = "FRP"; break;
         case "Lan": el = "LAN"; break;
         case "Act": el = "ACT"; break;
         case "\u2160": el = "ALK"; break;
