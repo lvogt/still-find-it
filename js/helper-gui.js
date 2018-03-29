@@ -34,6 +34,56 @@ function setupDropdownLists()
     }
   }
 
+  var elements = document.getElementById("exclude-pse").getElementsByTagName("li");
+  for (let i = 0; i < elements.length; i++)
+  {
+    elements[i].onclick = function(evt)
+    {
+      var el = evt.target.innerHTML;
+      switch (el)
+      {
+        case "TR1": el = "1TR"; break;
+        case "TR2": el = "2TR"; break;
+        case "TR3": el = "3TR"; break;
+        case "TR4": el = "4TR"; break;
+        case "P1": el = "1PE"; break;
+        case "P2": el = "2PE"; break;
+        case "P3": el = "3PE"; break;
+        case "P4": el = "4PE"; break;
+        case "P5": el = "5PE"; break;
+        case "P6": el = "6PE"; break;
+        case "P7": el = "7PE"; break;
+        case "Lan": el = "LAN"; break;
+        case "Act": el = "ACT"; break;
+        case "\u2160": el = "ALK"; break;
+        case "\u2161": el = "ALE"; break;
+        case "\u2162": el = "SCG"; break;
+        case "\u2163": el = "TIG"; break;
+        case "\u2164": el = "VG"; break;
+        case "\u2165": el = "CRG"; break;
+        case "\u2166": el = "MNG"; break;
+        case "\u2167": el = "FEG"; break;
+        case "\u2168": el = "COG"; break;
+        case "\u2169": el = "NIG"; break;
+        case "\u216A": el = "CUG"; break;
+        case "\u216B": el = "ZNG"; break;
+        case "\u2169\u2162": el = "BG"; break;
+        case "\u2169\u2163": el = "TET"; break;
+        case "\u2169\u2164": el = "PNC"; break;
+        case "\u2169\u2165": el = "CHA"; break;
+        case "\u2169\u2166": el = "HAL"; break;
+        case "\u2169\u2167": el = "NGS"; break;
+        default: break;
+      }
+      var val = document.getElementById("exclude");
+
+      if (new RegExp(el + "\\s").test(val.value))
+        return;
+
+      val.value += el + " ";
+    }
+  }
+
   helperOpen = null;
   window.onclick = handleGlobalClicks;
 }

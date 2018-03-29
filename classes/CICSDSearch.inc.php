@@ -869,6 +869,7 @@ class CICSDSearch
       case "ZNG": return array("Zn", "Cd", "Hg", "Cn");
 
       //period
+      case "1PE": return array("H", "D", "T", "He");
       case "2PE": return array("Li", "Be", "B", "C", "N", "O", "F", "Ne");
       case "3PE": return array("Na", "Mg", "Al", "Si", "P", "S", "Cl", "Ar");
       case "4PE": return array("K", "Ca", "Sc", "Ti", "V", "Cr", "Mn", "Fe", "Co",
